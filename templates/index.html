@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/predict" method="post">
+        <!-- <div class="form-group row">
+          <label for="stateName" class="col-sm-2 col-form-label">State Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="stateName" placeholder='Karnataka'></input>
+          </div>
+        </div> -->
+        <div class="form-group row">
+          <label for="districtName" class="col-sm-2 col-form-label">District Name</label>
+          <div class="col-sm-10">
+            <!-- <input type="text" class="form-control" id="districtName" placeholder="Bangalore" name="districtName"> -->
+            <select name="districtName" id="districtName">
+              <option value="District_Name_24 PARAGANAS NORTH" name="District_Name_24 PARAGANAS NORTH">District_Name_24 PARAGANAS NORTH</option>
+              <option value="District_Name_24 PARAGANAS SOUTH" name="District_Name_24 PARAGANAS SOUTH">District_Name_24 PARAGANAS SOUTH</option>
+              <option value="District_Name_ADILABAD" name="District_Name_ADILABAD">District_Name_ADILABAD</option>
+              <option value="District_Name_AGAR MALWA" name="District_Name_AGAR MALWA">District_Name_AGAR MALWA</option>
+              <option value="District_Name_AGRA" name="District_Name_AGRA">District_Name_AGRA</option>
+              <option value="District_Name_AHMADABAD" name="District_Name_AHMADABAD">District_Name_AHMADABAD</option>
+              <option value="District_Name_AHMEDNAGAR" name="District_Name_AHMEDNAGAR">District_Name_AHMEDNAGAR</option>
+              <option value="District_Name_AIZAWL" name="District_Name_AIZAWL">District_Name_AIZAWL</option>
+              <option value="District_Name_AJMER" name="District_Name_AJMER">District_Name_AJMER</option>
+              <option value="District_Name_AKOLA" name="District_Name_AKOLA">District_Name_AKOLA</option>
+              <option value="District_Name_ALAPPUZHA" name="District_Name_ALAPPUZHA">District_Name_ALAPPUZHA</option>
+              <option value="District_Name_ALIGARH" name="District_Name_ALIGARH">District_Name_ALIGARH</option>
+              <option value="District_Name_ALIRAJPUR" name="District_Name_ALIRAJPUR">District_Name_ALIRAJPUR</option>
+              <option value="District_Name_ALLAHABAD" name="District_Name_ALLAHABAD">District_Name_ALLAHABAD</option>
+              <option value="District_Name_ALMORA" name="District_Name_ALMORA">District_Name_ALMORA</option>
+              <option value="District_Name_ALWAR" name="District_Name_ALWAR">District_Name_ALWAR</option>
+              <option value="District_Name_AMBALA" name="District_Name_AMBALA">District_Name_AMBALA</option>
+              <option value="District_Name_AMBEDKAR NAGAR" name="District_Name_AMBEDKAR NAGAR">District_Name_AMBEDKAR NAGAR</option>
+              <option value="District_Name_AMETHI" name="District_Name_AMETHI">District_Name_AMETHI</option>
+              <option value="District_Name_AMRAVATI" name="District_Name_AMRAVATI">District_Name_AMRAVATI</option>
+              <option value="District_Name_AMRELI" name="District_Name_AMRELI">District_Name_AMRELI</option>
+              <option value="District_Name_AMRITSAR" name="District_Name_AMRITSAR">District_Name_AMRITSAR</option>
+              <option value="District_Name_AMROHA" name="District_Name_AMROHA">District_Name_AMROHA</option>
+              <option value="District_Name_ANAND" name="District_Name_ANAND">District_Name_ANAND</option>
+              <option value="District_Name_ANANTAPUR" name="District_Name_ANANTAPUR">District_Name_ANANTAPUR</option>
+              <option value="District_Name_ANANTNAG" name="District_Name_ANANTNAG">District_Name_ANANTNAG</option>
+              <option value="District_Name_ANJAW" name="District_Name_ANJAW">District_Name_ANJAW</option>
+              <option value="District_Name_ANUGUL" name="District_Name_ANUGUL">District_Name_ANUGUL</option>
+              <option value="District_Name_ANUPPUR" name="District_Name_ANUPPUR">District_Name_ANUPPUR</option>
+              <option value="District_Name_ARARIA" name="District_Name_ARARIA">District_Name_ARARIA</option>
+              <option value="District_Name_ARIYALUR" name="District_Name_ARIYALUR">District_Name_ARIYALUR</option>
+              <option value="District_Name_ARWAL" name="District_Name_ARWAL">District_Name_ARWAL</option>
+              <option value="District_Name_ASHOKNAGAR" name="District_Name_ASHOKNAGAR">District_Name_ASHOKNAGAR</option>
+              <option value="District_Name_AURAIYA" name="District_Name_AURAIYA">District_Name_AURAIYA</option>
+              <option value="District_Name_AURANGABAD" name="District_Name_AURANGABAD">District_Name_AURANGABAD</option>
+              <option value="District_Name_AZAMGARH" name="District_Name_AZAMGARH">District_Name_AZAMGARH</option>
+              <option value="District_Name_BADGAM" name="District_Name_BADGAM">District_Name_BADGAM</option>
+              <option value="District_Name_BAGALKOT" name="District_Name_BAGALKOT">District_Name_BAGALKOT</option>
+              <option value="District_Name_BAGESHWAR" name="District_Name_BAGESHWAR">District_Name_BAGESHWAR</option>
+              <option value="District_Name_BAGHPAT" name="District_Name_BAGHPAT">District_Name_BAGHPAT</option>
+              <option value="District_Name_BAHRAICH" name="District_Name_BAHRAICH">District_Name_BAHRAICH</option>
+              <option value="District_Name_BAKSA" name="District_Name_BAKSA">District_Name_BAKSA</option>
+              <option value="District_Name_BALAGHAT" name="District_Name_BALAGHAT">District_Name_BALAGHAT</option>
+              <option value="District_Name_BALANGIR" name="District_Name_BALANGIR">District_Name_BALANGIR</option>
+              <option value="District_Name_BALESHWAR" name="District_Name_BALESHWAR">District_Name_BALESHWAR</option>
+              <option value="District_Name_BALLIA" name="District_Name_BALLIA">District_Name_BALLIA</option>
+              <option value="District_Name_BALOD" name="District_Name_BALOD">District_Name_BALOD</option>
+              <option value="District_Name_BALODA BAZAR" name="District_Name_BALODA BAZAR">District_Name_BALODA BAZAR</option>
+              <option value="District_Name_BALRAMPUR" name="District_Name_BALRAMPUR">District_Name_BALRAMPUR</option>
+              <option value="District_Name_BANAS KANTHA" name="District_Name_BANAS KANTHA">District_Name_BANAS KANTHA</option>
+              <option value="District_Name_BANDA" name="District_Name_BANDA">District_Name_BANDA</option>
+              <option value="District_Name_BANDIPORA" name="District_Name_BANDIPORA">District_Name_BANDIPORA</option>
+              <option value="District_Name_BANGALORE RURAL" name="District_Name_BANGALORE RURAL">District_Name_BANGALORE RURAL</option>
+              <option value="District_Name_BANKA" name="District_Name_BANKA">District_Name_BANKA</option>
+              <option value="District_Name_BANKURA" name="District_Name_BANKURA">District_Name_BANKURA</option>
+              <option value="District_Name_BANSWARA" name="District_Name_BANSWARA">District_Name_BANSWARA</option>
+              <option value="District_Name_BARABANKI" name="District_Name_BARABANKI">District_Name_BARABANKI</option>
+              <option value="District_Name_BARAMULLA" name="District_Name_BARAMULLA">District_Name_BARAMULLA</option>
+              <option value="District_Name_BARAN" name="District_Name_BARAN">District_Name_BARAN</option>
+              <option value="District_Name_BARDHAMAN" name="District_Name_BARDHAMAN">District_Name_BARDHAMAN</option>
+              <option value="District_Name_BAREILLY" name="District_Name_BAREILLY">District_Name_BAREILLY</option>
+              <option value="District_Name_BARGARH" name="District_Name_BARGARH">District_Name_BARGARH</option>
+              <option value="District_Name_BARMER" name="District_Name_BARMER">District_Name_BARMER</option>
+              <option value="District_Name_BARNALA" name="District_Name_BARNALA">District_Name_BARNALA</option>
+              <option value="District_Name_BARPETA" name="District_Name_BARPETA">District_Name_BARPETA</option>
+              <option value="District_Name_BARWANI" name="District_Name_BARWANI">District_Name_BARWANI</option>
+              <option value="District_Name_BASTAR" name="District_Name_BASTAR">District_Name_BASTAR</option>
+              <option value="District_Name_BASTI" name="District_Name_BASTI">District_Name_BASTI</option>
+              <option value="District_Name_BATHINDA" name="District_Name_BATHINDA">District_Name_BATHINDA</option>
+              <option value="District_Name_BEED" name="District_Name_BEED">District_Name_BEED</option>
+              <option value="District_Name_BEGUSARAI" name="District_Name_BEGUSARAI">District_Name_BEGUSARAI</option>
+              <option value="District_Name_BELGAUM" name="District_Name_BELGAUM">District_Name_BELGAUM</option>
+              <option value="District_Name_BELLARY" name="District_Name_BELLARY">District_Name_BELLARY</option>
+              <option value="District_Name_BEMETARA" name="District_Name_BEMETARA">District_Name_BEMETARA</option>
+              <option value="District_Name_BENGALURU URBAN" name="District_Name_BENGALURU URBAN">District_Name_BENGALURU URBAN</option>
+              <option value="District_Name_BETUL" name="District_Name_BETUL">District_Name_BETUL</option>
+              <option value="District_Name_BHADRAK" name="District_Name_BHADRAK">District_Name_BHADRAK</option>
+              <option value="District_Name_BHAGALPUR" name="District_Name_BHAGALPUR">District_Name_BHAGALPUR</option>
+              <option value="District_Name_BHANDARA" name="District_Name_BHANDARA">District_Name_BHANDARA</option>
+              <option value="District_Name_BHARATPUR" name="District_Name_BHARATPUR">District_Name_BHARATPUR</option>
+              <option value="District_Name_BHARUCH" name="District_Name_BHARUCH">District_Name_BHARUCH</option>
+              <option value="District_Name_BHAVNAGAR" name="District_Name_BHAVNAGAR">District_Name_BHAVNAGAR</option>
+              <option value="District_Name_BHILWARA" name="District_Name_BHILWARA">District_Name_BHILWARA</option>
+              <option value="District_Name_BHIND" name="District_Name_BHIND">District_Name_BHIND</option>
+              <option value="District_Name_BHIWANI" name="District_Name_BHIWANI">District_Name_BHIWANI</option>
+              <option value="District_Name_BHOJPUR" name="District_Name_BHOJPUR">District_Name_BHOJPUR</option>
+              <option value="District_Name_BHOPAL" name="District_Name_BHOPAL">District_Name_BHOPAL</option>
+              <option value="District_Name_BIDAR" name="District_Name_BIDAR">District_Name_BIDAR</option>
+              <option value="District_Name_BIJAPUR" name="District_Name_BIJAPUR">District_Name_BIJAPUR</option>
+              <option value="District_Name_BIJNOR" name="District_Name_BIJNOR">District_Name_BIJNOR</option>
+              <option value="District_Name_BIKANER" name="District_Name_BIKANER">District_Name_BIKANER</option>
+              <option value="District_Name_BILASPUR" name="District_Name_BILASPUR">District_Name_BILASPUR</option>
+              <option value="District_Name_BIRBHUM" name="District_Name_BIRBHUM">District_Name_BIRBHUM</option>
+              <option value="District_Name_BISHNUPUR" name="District_Name_BISHNUPUR">District_Name_BISHNUPUR</option>
+              <option value="District_Name_BOKARO" name="District_Name_BOKARO">District_Name_BOKARO</option>
+              <option value="District_Name_BONGAIGAON" name="District_Name_BONGAIGAON">District_Name_BONGAIGAON</option>
+              <option value="District_Name_BOUDH" name="District_Name_BOUDH">District_Name_BOUDH</option>
+              <option value="District_Name_BUDAUN" name="District_Name_BUDAUN">District_Name_BUDAUN</option>
+              <option value="District_Name_BULANDSHAHR" name="District_Name_BULANDSHAHR">District_Name_BULANDSHAHR</option>
+              <option value="District_Name_BULDHANA" name="District_Name_BULDHANA">District_Name_BULDHANA</option>
+              <option value="District_Name_BUNDI" name="District_Name_BUNDI">District_Name_BUNDI</option>
+              <option value="District_Name_BURHANPUR" name="District_Name_BURHANPUR">District_Name_BURHANPUR</option>
+              <option value="District_Name_BUXAR" name="District_Name_BUXAR">District_Name_BUXAR</option>
+              <option value="District_Name_CACHAR" name="District_Name_CACHAR">District_Name_CACHAR</option>
+              <option value="District_Name_CHAMARAJANAGAR" name="District_Name_CHAMARAJANAGAR">District_Name_CHAMARAJANAGAR</option>
+              <option value="District_Name_CHAMBA" name="District_Name_CHAMBA">District_Name_CHAMBA</option>
+              <option value="District_Name_CHAMOLI" name="District_Name_CHAMOLI">District_Name_CHAMOLI</option>
+              <option value="District_Name_CHAMPAWAT" name="District_Name_CHAMPAWAT">District_Name_CHAMPAWAT</option>
+              <option value="District_Name_CHAMPHAI" name="District_Name_CHAMPHAI">District_Name_CHAMPHAI</option>
+              <option value="District_Name_CHANDAULI" name="District_Name_CHANDAULI">District_Name_CHANDAULI</option>
+              <option value="District_Name_CHANDEL" name="District_Name_CHANDEL">District_Name_CHANDEL</option>
+              <option value="District_Name_CHANDIGARH" name="District_Name_CHANDIGARH">District_Name_CHANDIGARH</option>
+              <option value="District_Name_CHANDRAPUR" name="District_Name_CHANDRAPUR">District_Name_CHANDRAPUR</option>
+              <option value="District_Name_CHANGLANG" name="District_Name_CHANGLANG">District_Name_CHANGLANG</option>
+              <option value="District_Name_CHATRA" name="District_Name_CHATRA">District_Name_CHATRA</option>
+              <option value="District_Name_CHHATARPUR" name="District_Name_CHHATARPUR">District_Name_CHHATARPUR</option>
+              <option value="District_Name_CHHINDWARA" name="District_Name_CHHINDWARA">District_Name_CHHINDWARA</option>
+              <option value="District_Name_CHIKBALLAPUR" name="District_Name_CHIKBALLAPUR">District_Name_CHIKBALLAPUR</option>
+              <option value="District_Name_CHIKMAGALUR" name="District_Name_CHIKMAGALUR">District_Name_CHIKMAGALUR</option>
+              <option value="District_Name_CHIRANG" name="District_Name_CHIRANG">District_Name_CHIRANG</option>
+              <option value="District_Name_CHITRADURGA" name="District_Name_CHITRADURGA">District_Name_CHITRADURGA</option>
+              <option value="District_Name_CHITRAKOOT" name="District_Name_CHITRAKOOT">District_Name_CHITRAKOOT</option>
+              <option value="District_Name_CHITTOOR" name="District_Name_CHITTOOR">District_Name_CHITTOOR</option>
+              <option value="District_Name_CHITTORGARH" name="District_Name_CHITTORGARH">District_Name_CHITTORGARH</option>
+              <option value="District_Name_CHURACHANDPUR" name="District_Name_CHURACHANDPUR">District_Name_CHURACHANDPUR</option>
+              <option value="District_Name_CHURU" name="District_Name_CHURU">District_Name_CHURU</option>
+              <option value="District_Name_COIMBATORE" name="District_Name_COIMBATORE">District_Name_COIMBATORE</option>
+              <option value="District_Name_COOCHBEHAR" name="District_Name_COOCHBEHAR">District_Name_COOCHBEHAR</option>
+              <option value="District_Name_CUDDALORE" name="District_Name_CUDDALORE">District_Name_CUDDALORE</option>
+              <option value="District_Name_CUTTACK" name="District_Name_CUTTACK">District_Name_CUTTACK</option>
+              <option value="District_Name_DADRA AND NAGAR HAVELI" name="District_Name_DADRA AND NAGAR HAVELI">District_Name_DADRA AND NAGAR HAVELI</option>
+              <option value="District_Name_DAKSHIN KANNAD" name="District_Name_DAKSHIN KANNAD">District_Name_DAKSHIN KANNAD</option>
+              <option value="District_Name_DAMOH" name="District_Name_DAMOH">District_Name_DAMOH</option>
+              <option value="District_Name_DANG" name="District_Name_DANG">District_Name_DANG</option>
+              <option value="District_Name_DANTEWADA" name="District_Name_DANTEWADA">District_Name_DANTEWADA</option>
+              <option value="District_Name_DARBHANGA" name="District_Name_DARBHANGA">District_Name_DARBHANGA</option>
+              <option value="District_Name_DARJEELING" name="District_Name_DARJEELING">District_Name_DARJEELING</option>
+              <option value="District_Name_DARRANG" name="District_Name_DARRANG">District_Name_DARRANG</option>
+              <option value="District_Name_DATIA" name="District_Name_DATIA">District_Name_DATIA</option>
+              <option value="District_Name_DAUSA" name="District_Name_DAUSA">District_Name_DAUSA</option>
+              <option value="District_Name_DAVANGERE" name="District_Name_DAVANGERE">District_Name_DAVANGERE</option>
+              <option value="District_Name_DEHRADUN" name="District_Name_DEHRADUN">District_Name_DEHRADUN</option>
+              <option value="District_Name_DEOGARH" name="District_Name_DEOGARH">District_Name_DEOGARH</option>
+              <option value="District_Name_DEOGHAR" name="District_Name_DEOGHAR">District_Name_DEOGHAR</option>
+              <option value="District_Name_DEORIA" name="District_Name_DEORIA">District_Name_DEORIA</option>
+              <option value="District_Name_DEWAS" name="District_Name_DEWAS">District_Name_DEWAS</option>
+              <option value="District_Name_DHALAI" name="District_Name_DHALAI">District_Name_DHALAI</option>
+              <option value="District_Name_DHAMTARI" name="District_Name_DHAMTARI">District_Name_DHAMTARI</option>
+              <option value="District_Name_DHANBAD" name="District_Name_DHANBAD">District_Name_DHANBAD</option>
+              <option value="District_Name_DHAR" name="District_Name_DHAR">District_Name_DHAR</option>
+              <option value="District_Name_DHARMAPURI" name="District_Name_DHARMAPURI">District_Name_DHARMAPURI</option>
+              <option value="District_Name_DHARWAD" name="District_Name_DHARWAD">District_Name_DHARWAD</option>
+              <option value="District_Name_DHEMAJI" name="District_Name_DHEMAJI">District_Name_DHEMAJI</option>
+              <option value="District_Name_DHENKANAL" name="District_Name_DHENKANAL">District_Name_DHENKANAL</option>
+              <option value="District_Name_DHOLPUR" name="District_Name_DHOLPUR">District_Name_DHOLPUR</option>
+              <option value="District_Name_DHUBRI" name="District_Name_DHUBRI">District_Name_DHUBRI</option>
+              <option value="District_Name_DHULE" name="District_Name_DHULE">District_Name_DHULE</option>
+              <option value="District_Name_DIBANG VALLEY" name="District_Name_DIBANG VALLEY">District_Name_DIBANG VALLEY</option>
+              <option value="District_Name_DIBRUGARH" name="District_Name_DIBRUGARH">District_Name_DIBRUGARH</option>
+              <option value="District_Name_DIMA HASAO" name="District_Name_DIMA HASAO">District_Name_DIMA HASAO</option>
+              <option value="District_Name_DIMAPUR" name="District_Name_DIMAPUR">District_Name_DIMAPUR</option>
+              <option value="District_Name_DINAJPUR DAKSHIN" name="District_Name_DINAJPUR DAKSHIN">District_Name_DINAJPUR DAKSHIN</option>
+              <option value="District_Name_DINAJPUR UTTAR" name="District_Name_DINAJPUR UTTAR">District_Name_DINAJPUR UTTAR</option>
+              <option value="District_Name_DINDIGUL" name="District_Name_DINDIGUL">District_Name_DINDIGUL</option>
+              <option value="District_Name_DINDORI" name="District_Name_DINDORI">District_Name_DINDORI</option>
+              <option value="District_Name_DODA" name="District_Name_DODA">District_Name_DODA</option>
+              <option value="District_Name_DOHAD" name="District_Name_DOHAD">District_Name_DOHAD</option>
+              <option value="District_Name_DUMKA" name="District_Name_DUMKA">District_Name_DUMKA</option>
+              <option value="District_Name_DUNGARPUR" name="District_Name_DUNGARPUR">District_Name_DUNGARPUR</option>
+              <option value="District_Name_DURG" name="District_Name_DURG">District_Name_DURG</option>
+              <option value="District_Name_EAST DISTRICT" name="District_Name_EAST DISTRICT">District_Name_EAST DISTRICT</option>
+              <option value="District_Name_EAST GARO HILLS" name="District_Name_EAST GARO HILLS">District_Name_EAST GARO HILLS</option>
+              <option value="District_Name_EAST GODAVARI" name="District_Name_EAST GODAVARI">District_Name_EAST GODAVARI</option>
+              <option value="District_Name_EAST JAINTIA HILLS" name="District_Name_EAST JAINTIA HILLS">District_Name_EAST JAINTIA HILLS</option>
+              <option value="District_Name_EAST KAMENG" name="District_Name_EAST KAMENG">District_Name_EAST KAMENG</option>
+              <option value="District_Name_EAST KHASI HILLS" name="District_Name_EAST KHASI HILLS">District_Name_EAST KHASI HILLS</option>
+              <option value="District_Name_EAST SIANG" name="District_Name_EAST SIANG">District_Name_EAST SIANG</option>
+              <option value="District_Name_EAST SINGHBUM" name="District_Name_EAST SINGHBUM">District_Name_EAST SINGHBUM</option>
+              <option value="District_Name_ERNAKULAM" name="District_Name_ERNAKULAM">District_Name_ERNAKULAM</option>
+              <option value="District_Name_ERODE" name="District_Name_ERODE">District_Name_ERODE</option>
+              <option value="District_Name_ETAH" name="District_Name_ETAH">District_Name_ETAH</option>
+              <option value="District_Name_ETAWAH" name="District_Name_ETAWAH">District_Name_ETAWAH</option>
+              <option value="District_Name_FAIZABAD" name="District_Name_FAIZABAD">District_Name_FAIZABAD</option>
+              <option value="District_Name_FARIDABAD" name="District_Name_FARIDABAD">District_Name_FARIDABAD</option>
+              <option value="District_Name_FARIDKOT" name="District_Name_FARIDKOT">District_Name_FARIDKOT</option>
+              <option value="District_Name_FARRUKHABAD" name="District_Name_FARRUKHABAD">District_Name_FARRUKHABAD</option>
+              <option value="District_Name_FATEHABAD" name="District_Name_FATEHABAD">District_Name_FATEHABAD</option>
+              <option value="District_Name_FATEHGARH SAHIB" name="District_Name_FATEHGARH SAHIB">District_Name_FATEHGARH SAHIB</option>
+              <option value="District_Name_FATEHPUR" name="District_Name_FATEHPUR">District_Name_FATEHPUR</option>
+              <option value="District_Name_FAZILKA" name="District_Name_FAZILKA">District_Name_FAZILKA</option>
+              <option value="District_Name_FIROZABAD" name="District_Name_FIROZABAD">District_Name_FIROZABAD</option>
+              <option value="District_Name_FIROZEPUR" name="District_Name_FIROZEPUR">District_Name_FIROZEPUR</option>
+              <option value="District_Name_GADAG" name="District_Name_GADAG">District_Name_GADAG</option>
+              <option value="District_Name_GADCHIROLI" name="District_Name_GADCHIROLI">District_Name_GADCHIROLI</option>
+              <option value="District_Name_GAJAPATI" name="District_Name_GAJAPATI">District_Name_GAJAPATI</option>
+              <option value="District_Name_GANDERBAL" name="District_Name_GANDERBAL">District_Name_GANDERBAL</option>
+              <option value="District_Name_GANDHINAGAR" name="District_Name_GANDHINAGAR">District_Name_GANDHINAGAR</option>
+              <option value="District_Name_GANGANAGAR" name="District_Name_GANGANAGAR">District_Name_GANGANAGAR</option>
+              <option value="District_Name_GANJAM" name="District_Name_GANJAM">District_Name_GANJAM</option>
+              <option value="District_Name_GARHWA" name="District_Name_GARHWA">District_Name_GARHWA</option>
+              <option value="District_Name_GARIYABAND" name="District_Name_GARIYABAND">District_Name_GARIYABAND</option>
+              <option value="District_Name_GAUTAM BUDDHA NAGAR" name="District_Name_GAUTAM BUDDHA NAGAR">District_Name_GAUTAM BUDDHA NAGAR</option>
+              <option value="District_Name_GAYA" name="District_Name_GAYA">District_Name_GAYA</option>
+              <option value="District_Name_GHAZIABAD" name="District_Name_GHAZIABAD">District_Name_GHAZIABAD</option>
+              <option value="District_Name_GHAZIPUR" name="District_Name_GHAZIPUR">District_Name_GHAZIPUR</option>
+              <option value="District_Name_GIRIDIH" name="District_Name_GIRIDIH">District_Name_GIRIDIH</option>
+              <option value="District_Name_GOALPARA" name="District_Name_GOALPARA">District_Name_GOALPARA</option>
+              <option value="District_Name_GODDA" name="District_Name_GODDA">District_Name_GODDA</option>
+              <option value="District_Name_GOLAGHAT" name="District_Name_GOLAGHAT">District_Name_GOLAGHAT</option>
+              <option value="District_Name_GOMATI" name="District_Name_GOMATI">District_Name_GOMATI</option>
+              <option value="District_Name_GONDA" name="District_Name_GONDA">District_Name_GONDA</option>
+              <option value="District_Name_GONDIA" name="District_Name_GONDIA">District_Name_GONDIA</option>
+              <option value="District_Name_GOPALGANJ" name="District_Name_GOPALGANJ">District_Name_GOPALGANJ</option>
+              <option value="District_Name_GORAKHPUR" name="District_Name_GORAKHPUR">District_Name_GORAKHPUR</option>
+              <option value="District_Name_GULBARGA" name="District_Name_GULBARGA">District_Name_GULBARGA</option>
+              <option value="District_Name_GUMLA" name="District_Name_GUMLA">District_Name_GUMLA</option>
+              <option value="District_Name_GUNA" name="District_Name_GUNA">District_Name_GUNA</option>
+              <option value="District_Name_GUNTUR" name="District_Name_GUNTUR">District_Name_GUNTUR</option>
+              <option value="District_Name_GURDASPUR" name="District_Name_GURDASPUR">District_Name_GURDASPUR</option>
+              <option value="District_Name_GURGAON" name="District_Name_GURGAON">District_Name_GURGAON</option>
+              <option value="District_Name_GWALIOR" name="District_Name_GWALIOR">District_Name_GWALIOR</option>
+              <option value="District_Name_HAILAKANDI" name="District_Name_HAILAKANDI">District_Name_HAILAKANDI</option>
+              <option value="District_Name_HAMIRPUR" name="District_Name_HAMIRPUR">District_Name_HAMIRPUR</option>
+              <option value="District_Name_HANUMANGARH" name="District_Name_HANUMANGARH">District_Name_HANUMANGARH</option>
+              <option value="District_Name_HAPUR" name="District_Name_HAPUR">District_Name_HAPUR</option>
+              <option value="District_Name_HARDA" name="District_Name_HARDA">District_Name_HARDA</option>
+              <option value="District_Name_HARDOI" name="District_Name_HARDOI">District_Name_HARDOI</option>
+              <option value="District_Name_HARIDWAR" name="District_Name_HARIDWAR">District_Name_HARIDWAR</option>
+              <option value="District_Name_HASSAN" name="District_Name_HASSAN">District_Name_HASSAN</option>
+              <option value="District_Name_HATHRAS" name="District_Name_HATHRAS">District_Name_HATHRAS</option>
+              <option value="District_Name_HAVERI" name="District_Name_HAVERI">District_Name_HAVERI</option>
+              <option value="District_Name_HAZARIBAGH" name="District_Name_HAZARIBAGH">District_Name_HAZARIBAGH</option>
+              <option value="District_Name_HINGOLI" name="District_Name_HINGOLI">District_Name_HINGOLI</option>
+              <option value="District_Name_HISAR" name="District_Name_HISAR">District_Name_HISAR</option>
+              <option value="District_Name_HOOGHLY" name="District_Name_HOOGHLY">District_Name_HOOGHLY</option>
+              <option value="District_Name_HOSHANGABAD" name="District_Name_HOSHANGABAD">District_Name_HOSHANGABAD</option>
+              <option value="District_Name_HOSHIARPUR" name="District_Name_HOSHIARPUR">District_Name_HOSHIARPUR</option>
+              <option value="District_Name_HOWRAH" name="District_Name_HOWRAH">District_Name_HOWRAH</option>
+              <option value="District_Name_HYDERABAD" name="District_Name_HYDERABAD">District_Name_HYDERABAD</option>
+              <option value="District_Name_IDUKKI" name="District_Name_IDUKKI">District_Name_IDUKKI</option>
+              <option value="District_Name_IMPHAL EAST" name="District_Name_IMPHAL EAST">District_Name_IMPHAL EAST</option>
+              <option value="District_Name_IMPHAL WEST" name="District_Name_IMPHAL WEST">District_Name_IMPHAL WEST</option>
+              <option value="District_Name_INDORE" name="District_Name_INDORE">District_Name_INDORE</option>
+              <option value="District_Name_JABALPUR" name="District_Name_JABALPUR">District_Name_JABALPUR</option>
+              <option value="District_Name_JAGATSINGHAPUR" name="District_Name_JAGATSINGHAPUR">District_Name_JAGATSINGHAPUR</option>
+              <option value="District_Name_JAIPUR" name="District_Name_JAIPUR">District_Name_JAIPUR</option>
+              <option value="District_Name_JAISALMER" name="District_Name_JAISALMER">District_Name_JAISALMER</option>
+              <option value="District_Name_JAJAPUR" name="District_Name_JAJAPUR">District_Name_JAJAPUR</option>
+              <option value="District_Name_JALANDHAR" name="District_Name_JALANDHAR">District_Name_JALANDHAR</option>
+              <option value="District_Name_JALAUN" name="District_Name_JALAUN">District_Name_JALAUN</option>
+              <option value="District_Name_JALGAON" name="District_Name_JALGAON">District_Name_JALGAON</option>
+              <option value="District_Name_JALNA" name="District_Name_JALNA">District_Name_JALNA</option>
+              <option value="District_Name_JALORE" name="District_Name_JALORE">District_Name_JALORE</option>
+              <option value="District_Name_JALPAIGURI" name="District_Name_JALPAIGURI">District_Name_JALPAIGURI</option>
+              <option value="District_Name_JAMMU" name="District_Name_JAMMU">District_Name_JAMMU</option>
+              <option value="District_Name_JAMNAGAR" name="District_Name_JAMNAGAR">District_Name_JAMNAGAR</option>
+              <option value="District_Name_JAMTARA" name="District_Name_JAMTARA">District_Name_JAMTARA</option>
+              <option value="District_Name_JAMUI" name="District_Name_JAMUI">District_Name_JAMUI</option>
+              <option value="District_Name_JANJGIR-CHAMPA" name="District_Name_JANJGIR-CHAMPA">District_Name_JANJGIR-CHAMPA</option>
+              <option value="District_Name_JASHPUR" name="District_Name_JASHPUR">District_Name_JASHPUR</option>
+              <option value="District_Name_JAUNPUR" name="District_Name_JAUNPUR">District_Name_JAUNPUR</option>
+              <option value="District_Name_JEHANABAD" name="District_Name_JEHANABAD">District_Name_JEHANABAD</option>
+              <option value="District_Name_JHABUA" name="District_Name_JHABUA">District_Name_JHABUA</option>
+              <option value="District_Name_JHAJJAR" name="District_Name_JHAJJAR">District_Name_JHAJJAR</option>
+              <option value="District_Name_JHALAWAR" name="District_Name_JHALAWAR">District_Name_JHALAWAR</option>
+              <option value="District_Name_JHANSI" name="District_Name_JHANSI">District_Name_JHANSI</option>
+              <option value="District_Name_JHARSUGUDA" name="District_Name_JHARSUGUDA">District_Name_JHARSUGUDA</option>
+              <option value="District_Name_JHUNJHUNU" name="District_Name_JHUNJHUNU">District_Name_JHUNJHUNU</option>
+              <option value="District_Name_JIND" name="District_Name_JIND">District_Name_JIND</option>
+              <option value="District_Name_JODHPUR" name="District_Name_JODHPUR">District_Name_JODHPUR</option>
+              <option value="District_Name_JORHAT" name="District_Name_JORHAT">District_Name_JORHAT</option>
+              <option value="District_Name_JUNAGADH" name="District_Name_JUNAGADH">District_Name_JUNAGADH</option>
+              <option value="District_Name_KABIRDHAM" name="District_Name_KABIRDHAM">District_Name_KABIRDHAM</option>
+              <option value="District_Name_KACHCHH" name="District_Name_KACHCHH">District_Name_KACHCHH</option>
+              <option value="District_Name_KADAPA" name="District_Name_KADAPA">District_Name_KADAPA</option>
+              <option value="District_Name_KAIMUR (BHABUA)" name="District_Name_KAIMUR (BHABUA)">District_Name_KAIMUR (BHABUA)</option>
+              <option value="District_Name_KAITHAL" name="District_Name_KAITHAL">District_Name_KAITHAL</option>
+              <option value="District_Name_KALAHANDI" name="District_Name_KALAHANDI">District_Name_KALAHANDI</option>
+              <option value="District_Name_KAMRUP" name="District_Name_KAMRUP">District_Name_KAMRUP</option>
+              <option value="District_Name_KAMRUP METRO" name="District_Name_KAMRUP METRO">District_Name_KAMRUP METRO</option>
+              <option value="District_Name_KANCHIPURAM" name="District_Name_KANCHIPURAM">District_Name_KANCHIPURAM</option>
+              <option value="District_Name_KANDHAMAL" name="District_Name_KANDHAMAL">District_Name_KANDHAMAL</option>
+              <option value="District_Name_KANGRA" name="District_Name_KANGRA">District_Name_KANGRA</option>
+              <option value="District_Name_KANKER" name="District_Name_KANKER">District_Name_KANKER</option>
+              <option value="District_Name_KANNAUJ" name="District_Name_KANNAUJ">District_Name_KANNAUJ</option>
+              <option value="District_Name_KANNIYAKUMARI" name="District_Name_KANNIYAKUMARI">District_Name_KANNIYAKUMARI</option>
+              <option value="District_Name_KANNUR" name="District_Name_KANNUR">District_Name_KANNUR</option>
+              <option value="District_Name_KANPUR DEHAT" name="District_Name_KANPUR DEHAT">District_Name_KANPUR DEHAT</option>
+              <option value="District_Name_KANPUR NAGAR" name="District_Name_KANPUR NAGAR">District_Name_KANPUR NAGAR</option>
+              <option value="District_Name_KAPURTHALA" name="District_Name_KAPURTHALA">District_Name_KAPURTHALA</option>
+              <option value="District_Name_KARAIKAL" name="District_Name_KARAIKAL">District_Name_KARAIKAL</option>
+              <option value="District_Name_KARAULI" name="District_Name_KARAULI">District_Name_KARAULI</option>
+              <option value="District_Name_KARBI ANGLONG" name="District_Name_KARBI ANGLONG">District_Name_KARBI ANGLONG</option>
+              <option value="District_Name_KARGIL" name="District_Name_KARGIL">District_Name_KARGIL</option>
+              <option value="District_Name_KARIMGANJ" name="District_Name_KARIMGANJ">District_Name_KARIMGANJ</option>
+              <option value="District_Name_KARIMNAGAR" name="District_Name_KARIMNAGAR">District_Name_KARIMNAGAR</option>
+              <option value="District_Name_KARNAL" name="District_Name_KARNAL">District_Name_KARNAL</option>
+              <option value="District_Name_KARUR" name="District_Name_KARUR">District_Name_KARUR</option>
+              <option value="District_Name_KASARAGOD" name="District_Name_KASARAGOD">District_Name_KASARAGOD</option>
+              <option value="District_Name_KASGANJ" name="District_Name_KASGANJ">District_Name_KASGANJ</option>
+              <option value="District_Name_KATHUA" name="District_Name_KATHUA">District_Name_KATHUA</option>
+              <option value="District_Name_KATIHAR" name="District_Name_KATIHAR">District_Name_KATIHAR</option>
+              <option value="District_Name_KATNI" name="District_Name_KATNI">District_Name_KATNI</option>
+              <option value="District_Name_KAUSHAMBI" name="District_Name_KAUSHAMBI">District_Name_KAUSHAMBI</option>
+              <option value="District_Name_KENDRAPARA" name="District_Name_KENDRAPARA">District_Name_KENDRAPARA</option>
+              <option value="District_Name_KENDUJHAR" name="District_Name_KENDUJHAR">District_Name_KENDUJHAR</option>
+              <option value="District_Name_KHAGARIA" name="District_Name_KHAGARIA">District_Name_KHAGARIA</option>
+              <option value="District_Name_KHAMMAM" name="District_Name_KHAMMAM">District_Name_KHAMMAM</option>
+              <option value="District_Name_KHANDWA" name="District_Name_KHANDWA">District_Name_KHANDWA</option>
+              <option value="District_Name_KHARGONE" name="District_Name_KHARGONE">District_Name_KHARGONE</option>
+              <option value="District_Name_KHEDA" name="District_Name_KHEDA">District_Name_KHEDA</option>
+              <option value="District_Name_KHERI" name="District_Name_KHERI">District_Name_KHERI</option>
+              <option value="District_Name_KHORDHA" name="District_Name_KHORDHA">District_Name_KHORDHA</option>
+              <option value="District_Name_KHOWAI" name="District_Name_KHOWAI">District_Name_KHOWAI</option>
+              <option value="District_Name_KHUNTI" name="District_Name_KHUNTI">District_Name_KHUNTI</option>
+              <option value="District_Name_KINNAUR" name="District_Name_KINNAUR">District_Name_KINNAUR</option>
+              <option value="District_Name_KIPHIRE" name="District_Name_KIPHIRE">District_Name_KIPHIRE</option>
+              <option value="District_Name_KISHANGANJ" name="District_Name_KISHANGANJ">District_Name_KISHANGANJ</option>
+              <option value="District_Name_KISHTWAR" name="District_Name_KISHTWAR">District_Name_KISHTWAR</option>
+              <option value="District_Name_KODAGU" name="District_Name_KODAGU">District_Name_KODAGU</option>
+              <option value="District_Name_KODERMA" name="District_Name_KODERMA">District_Name_KODERMA</option>
+              <option value="District_Name_KOHIMA" name="District_Name_KOHIMA">District_Name_KOHIMA</option>
+              <option value="District_Name_KOKRAJHAR" name="District_Name_KOKRAJHAR">District_Name_KOKRAJHAR</option>
+              <option value="District_Name_KOLAR" name="District_Name_KOLAR">District_Name_KOLAR</option>
+              <option value="District_Name_KOLASIB" name="District_Name_KOLASIB">District_Name_KOLASIB</option>
+              <option value="District_Name_KOLHAPUR" name="District_Name_KOLHAPUR">District_Name_KOLHAPUR</option>
+              <option value="District_Name_KOLLAM" name="District_Name_KOLLAM">District_Name_KOLLAM</option>
+              <option value="District_Name_KONDAGAON" name="District_Name_KONDAGAON">District_Name_KONDAGAON</option>
+              <option value="District_Name_KOPPAL" name="District_Name_KOPPAL">District_Name_KOPPAL</option>
+              <option value="District_Name_KORAPUT" name="District_Name_KORAPUT">District_Name_KORAPUT</option>
+              <option value="District_Name_KORBA" name="District_Name_KORBA">District_Name_KORBA</option>
+              <option value="District_Name_KOREA" name="District_Name_KOREA">District_Name_KOREA</option>
+              <option value="District_Name_KOTA" name="District_Name_KOTA">District_Name_KOTA</option>
+              <option value="District_Name_KOTTAYAM" name="District_Name_KOTTAYAM">District_Name_KOTTAYAM</option>
+              <option value="District_Name_KOZHIKODE" name="District_Name_KOZHIKODE">District_Name_KOZHIKODE</option>
+              <option value="District_Name_KRISHNA" name="District_Name_KRISHNA">District_Name_KRISHNA</option>
+              <option value="District_Name_KRISHNAGIRI" name="District_Name_KRISHNAGIRI">District_Name_KRISHNAGIRI</option>
+              <option value="District_Name_KULGAM" name="District_Name_KULGAM">District_Name_KULGAM</option>
+              <option value="District_Name_KULLU" name="District_Name_KULLU">District_Name_KULLU</option>
+              <option value="District_Name_KUPWARA" name="District_Name_KUPWARA">District_Name_KUPWARA</option>
+              <option value="District_Name_KURNOOL" name="District_Name_KURNOOL">District_Name_KURNOOL</option>
+              <option value="District_Name_KURUKSHETRA" name="District_Name_KURUKSHETRA">District_Name_KURUKSHETRA</option>
+              <option value="District_Name_KURUNG KUMEY" name="District_Name_KURUNG KUMEY">District_Name_KURUNG KUMEY</option>
+              <option value="District_Name_KUSHI NAGAR" name="District_Name_KUSHI NAGAR">District_Name_KUSHI NAGAR</option>
+              <option value="District_Name_LAHUL AND SPITI" name="District_Name_LAHUL AND SPITI">District_Name_LAHUL AND SPITI</option>
+              <option value="District_Name_LAKHIMPUR" name="District_Name_LAKHIMPUR">District_Name_LAKHIMPUR</option>
+              <option value="District_Name_LAKHISARAI" name="District_Name_LAKHISARAI">District_Name_LAKHISARAI</option>
+              <option value="District_Name_LALITPUR" name="District_Name_LALITPUR">District_Name_LALITPUR</option>
+              <option value="District_Name_LATEHAR" name="District_Name_LATEHAR">District_Name_LATEHAR</option>
+              <option value="District_Name_LATUR" name="District_Name_LATUR">District_Name_LATUR</option>
+              <option value="District_Name_LAWNGTLAI" name="District_Name_LAWNGTLAI">District_Name_LAWNGTLAI</option>
+              <option value="District_Name_LEH LADAKH" name="District_Name_LEH LADAKH">District_Name_LEH LADAKH</option>
+              <option value="District_Name_LOHARDAGA" name="District_Name_LOHARDAGA">District_Name_LOHARDAGA</option>
+              <option value="District_Name_LOHIT" name="District_Name_LOHIT">District_Name_LOHIT</option>
+              <option value="District_Name_LONGDING" name="District_Name_LONGDING">District_Name_LONGDING</option>
+              <option value="District_Name_LONGLENG" name="District_Name_LONGLENG">District_Name_LONGLENG</option>
+              <option value="District_Name_LOWER DIBANG VALLEY" name="District_Name_LOWER DIBANG VALLEY">District_Name_LOWER DIBANG VALLEY</option>
+              <option value="District_Name_LOWER SUBANSIRI" name="District_Name_LOWER SUBANSIRI">District_Name_LOWER SUBANSIRI</option>
+              <option value="District_Name_LUCKNOW" name="District_Name_LUCKNOW">District_Name_LUCKNOW</option>
+              <option value="District_Name_LUDHIANA" name="District_Name_LUDHIANA">District_Name_LUDHIANA</option>
+              <option value="District_Name_LUNGLEI" name="District_Name_LUNGLEI">District_Name_LUNGLEI</option>
+              <option value="District_Name_MADHEPURA" name="District_Name_MADHEPURA">District_Name_MADHEPURA</option>
+              <option value="District_Name_MADHUBANI" name="District_Name_MADHUBANI">District_Name_MADHUBANI</option>
+              <option value="District_Name_MADURAI" name="District_Name_MADURAI">District_Name_MADURAI</option>
+              <option value="District_Name_MAHARAJGANJ" name="District_Name_MAHARAJGANJ">District_Name_MAHARAJGANJ</option>
+              <option value="District_Name_MAHASAMUND" name="District_Name_MAHASAMUND">District_Name_MAHASAMUND</option>
+              <option value="District_Name_MAHBUBNAGAR" name="District_Name_MAHBUBNAGAR">District_Name_MAHBUBNAGAR</option>
+              <option value="District_Name_MAHE" name="District_Name_MAHE">District_Name_MAHE</option>
+              <option value="District_Name_MAHENDRAGARH" name="District_Name_MAHENDRAGARH">District_Name_MAHENDRAGARH</option>
+              <option value="District_Name_MAHESANA" name="District_Name_MAHESANA">District_Name_MAHESANA</option>
+              <option value="District_Name_MAHOBA" name="District_Name_MAHOBA">District_Name_MAHOBA</option>
+              <option value="District_Name_MAINPURI" name="District_Name_MAINPURI">District_Name_MAINPURI</option>
+              <option value="District_Name_MALAPPURAM" name="District_Name_MALAPPURAM">District_Name_MALAPPURAM</option>
+              <option value="District_Name_MALDAH" name="District_Name_MALDAH">District_Name_MALDAH</option>
+              <option value="District_Name_MALKANGIRI" name="District_Name_MALKANGIRI">District_Name_MALKANGIRI</option>
+              <option value="District_Name_MAMIT" name="District_Name_MAMIT">District_Name_MAMIT</option>
+              <option value="District_Name_MANDI" name="District_Name_MANDI">District_Name_MANDI</option>
+              <option value="District_Name_MANDLA" name="District_Name_MANDLA">District_Name_MANDLA</option>
+              <option value="District_Name_MANDSAUR" name="District_Name_MANDSAUR">District_Name_MANDSAUR</option>
+              <option value="District_Name_MANDYA" name="District_Name_MANDYA">District_Name_MANDYA</option>
+              <option value="District_Name_MANSA" name="District_Name_MANSA">District_Name_MANSA</option>
+              <option value="District_Name_MARIGAON" name="District_Name_MARIGAON">District_Name_MARIGAON</option>
+              <option value="District_Name_MATHURA" name="District_Name_MATHURA">District_Name_MATHURA</option>
+              <option value="District_Name_MAU" name="District_Name_MAU">District_Name_MAU</option>
+              <option value="District_Name_MAYURBHANJ" name="District_Name_MAYURBHANJ">District_Name_MAYURBHANJ</option>
+              <option value="District_Name_MEDAK" name="District_Name_MEDAK">District_Name_MEDAK</option>
+              <option value="District_Name_MEDINIPUR EAST" name="District_Name_MEDINIPUR EAST">District_Name_MEDINIPUR EAST</option>
+              <option value="District_Name_MEDINIPUR WEST" name="District_Name_MEDINIPUR WEST">District_Name_MEDINIPUR WEST</option>
+              <option value="District_Name_MEERUT" name="District_Name_MEERUT">District_Name_MEERUT</option>
+              <option value="District_Name_MEWAT" name="District_Name_MEWAT">District_Name_MEWAT</option>
+              <option value="District_Name_MIRZAPUR" name="District_Name_MIRZAPUR">District_Name_MIRZAPUR</option>
+              <option value="District_Name_MOGA" name="District_Name_MOGA">District_Name_MOGA</option>
+              <option value="District_Name_MOKOKCHUNG" name="District_Name_MOKOKCHUNG">District_Name_MOKOKCHUNG</option>
+              <option value="District_Name_MON" name="District_Name_MON">District_Name_MON</option>
+              <option value="District_Name_MORADABAD" name="District_Name_MORADABAD">District_Name_MORADABAD</option>
+              <option value="District_Name_MORENA" name="District_Name_MORENA">District_Name_MORENA</option>
+              <option value="District_Name_MUKTSAR" name="District_Name_MUKTSAR">District_Name_MUKTSAR</option>
+              <option value="District_Name_MUMBAI" name="District_Name_MUMBAI">District_Name_MUMBAI</option>
+              <option value="District_Name_MUNGELI" name="District_Name_MUNGELI">District_Name_MUNGELI</option>
+              <option value="District_Name_MUNGER" name="District_Name_MUNGER">District_Name_MUNGER</option>
+              <option value="District_Name_MURSHIDABAD" name="District_Name_MURSHIDABAD">District_Name_MURSHIDABAD</option>
+              <option value="District_Name_MUZAFFARNAGAR" name="District_Name_MUZAFFARNAGAR">District_Name_MUZAFFARNAGAR</option>
+              <option value="District_Name_MUZAFFARPUR" name="District_Name_MUZAFFARPUR">District_Name_MUZAFFARPUR</option>
+              <option value="District_Name_MYSORE" name="District_Name_MYSORE">District_Name_MYSORE</option>
+              <option value="District_Name_NABARANGPUR" name="District_Name_NABARANGPUR">District_Name_NABARANGPUR</option>
+              <option value="District_Name_NADIA" name="District_Name_NADIA">District_Name_NADIA</option>
+              <option value="District_Name_NAGAON" name="District_Name_NAGAON">District_Name_NAGAON</option>
+              <option value="District_Name_NAGAPATTINAM" name="District_Name_NAGAPATTINAM">District_Name_NAGAPATTINAM</option>
+              <option value="District_Name_NAGAUR" name="District_Name_NAGAUR">District_Name_NAGAUR</option>
+              <option value="District_Name_NAGPUR" name="District_Name_NAGPUR">District_Name_NAGPUR</option>
+              <option value="District_Name_NAINITAL" name="District_Name_NAINITAL">District_Name_NAINITAL</option>
+              <option value="District_Name_NALANDA" name="District_Name_NALANDA">District_Name_NALANDA</option>
+              <option value="District_Name_NALBARI" name="District_Name_NALBARI">District_Name_NALBARI</option>
+              <option value="District_Name_NALGONDA" name="District_Name_NALGONDA">District_Name_NALGONDA</option>
+              <option value="District_Name_NAMAKKAL" name="District_Name_NAMAKKAL">District_Name_NAMAKKAL</option>
+              <option value="District_Name_NAMSAI" name="District_Name_NAMSAI">District_Name_NAMSAI</option>
+              <option value="District_Name_NANDED" name="District_Name_NANDED">District_Name_NANDED</option>
+              <option value="District_Name_NANDURBAR" name="District_Name_NANDURBAR">District_Name_NANDURBAR</option>
+              <option value="District_Name_NARAYANPUR" name="District_Name_NARAYANPUR">District_Name_NARAYANPUR</option>
+              <option value="District_Name_NARMADA" name="District_Name_NARMADA">District_Name_NARMADA</option>
+              <option value="District_Name_NARSINGHPUR" name="District_Name_NARSINGHPUR">District_Name_NARSINGHPUR</option>
+              <option value="District_Name_NASHIK" name="District_Name_NASHIK">District_Name_NASHIK</option>
+              <option value="District_Name_NAVSARI" name="District_Name_NAVSARI">District_Name_NAVSARI</option>
+              <option value="District_Name_NAWADA" name="District_Name_NAWADA">District_Name_NAWADA</option>
+              <option value="District_Name_NAWANSHAHR" name="District_Name_NAWANSHAHR">District_Name_NAWANSHAHR</option>
+              <option value="District_Name_NAYAGARH" name="District_Name_NAYAGARH">District_Name_NAYAGARH</option>
+              <option value="District_Name_NEEMUCH" name="District_Name_NEEMUCH">District_Name_NEEMUCH</option>
+              <option value="District_Name_NICOBARS" name="District_Name_NICOBARS">District_Name_NICOBARS</option>
+              <option value="District_Name_NIZAMABAD" name="District_Name_NIZAMABAD">District_Name_NIZAMABAD</option>
+              <option value="District_Name_NORTH AND MIDDLE ANDAMAN" name="District_Name_NORTH AND MIDDLE ANDAMAN">District_Name_NORTH AND MIDDLE ANDAMAN</option>
+              <option value="District_Name_NORTH DISTRICT" name="District_Name_NORTH DISTRICT">District_Name_NORTH DISTRICT</option>
+              <option value="District_Name_NORTH GARO HILLS" name="District_Name_NORTH GARO HILLS">District_Name_NORTH GARO HILLS</option>
+              <option value="District_Name_NORTH GOA" name="District_Name_NORTH GOA">District_Name_NORTH GOA</option>
+              <option value="District_Name_NORTH TRIPURA" name="District_Name_NORTH TRIPURA">District_Name_NORTH TRIPURA</option>
+              <option value="District_Name_NUAPADA" name="District_Name_NUAPADA">District_Name_NUAPADA</option>
+              <option value="District_Name_OSMANABAD" name="District_Name_OSMANABAD">District_Name_OSMANABAD</option>
+              <option value="District_Name_PAKUR" name="District_Name_PAKUR">District_Name_PAKUR</option>
+              <option value="District_Name_PALAKKAD" name="District_Name_PALAKKAD">District_Name_PALAKKAD</option>
+              <option value="District_Name_PALAMU" name="District_Name_PALAMU">District_Name_PALAMU</option>
+              <option value="District_Name_PALGHAR" name="District_Name_PALGHAR">District_Name_PALGHAR</option>
+              <option value="District_Name_PALI" name="District_Name_PALI">District_Name_PALI</option>
+              <option value="District_Name_PALWAL" name="District_Name_PALWAL">District_Name_PALWAL</option>
+              <option value="District_Name_PANCH MAHALS" name="District_Name_PANCH MAHALS">District_Name_PANCH MAHALS</option>
+              <option value="District_Name_PANCHKULA" name="District_Name_PANCHKULA">District_Name_PANCHKULA</option>
+              <option value="District_Name_PANIPAT" name="District_Name_PANIPAT">District_Name_PANIPAT</option>
+              <option value="District_Name_PANNA" name="District_Name_PANNA">District_Name_PANNA</option>
+              <option value="District_Name_PAPUM PARE" name="District_Name_PAPUM PARE">District_Name_PAPUM PARE</option>
+              <option value="District_Name_PARBHANI" name="District_Name_PARBHANI">District_Name_PARBHANI</option>
+              <option value="District_Name_PASHCHIM CHAMPARAN" name="District_Name_PASHCHIM CHAMPARAN">District_Name_PASHCHIM CHAMPARAN</option>
+              <option value="District_Name_PATAN" name="District_Name_PATAN">District_Name_PATAN</option>
+              <option value="District_Name_PATHANAMTHITTA" name="District_Name_PATHANAMTHITTA">District_Name_PATHANAMTHITTA</option>
+              <option value="District_Name_PATHANKOT" name="District_Name_PATHANKOT">District_Name_PATHANKOT</option>
+              <option value="District_Name_PATIALA" name="District_Name_PATIALA">District_Name_PATIALA</option>
+              <option value="District_Name_PATNA" name="District_Name_PATNA">District_Name_PATNA</option>
+              <option value="District_Name_PAURI GARHWAL" name="District_Name_PAURI GARHWAL">District_Name_PAURI GARHWAL</option>
+              <option value="District_Name_PERAMBALUR" name="District_Name_PERAMBALUR">District_Name_PERAMBALUR</option>
+              <option value="District_Name_PEREN" name="District_Name_PEREN">District_Name_PEREN</option>
+              <option value="District_Name_PHEK" name="District_Name_PHEK">District_Name_PHEK</option>
+              <option value="District_Name_PILIBHIT" name="District_Name_PILIBHIT">District_Name_PILIBHIT</option>
+              <option value="District_Name_PITHORAGARH" name="District_Name_PITHORAGARH">District_Name_PITHORAGARH</option>
+              <option value="District_Name_PONDICHERRY" name="District_Name_PONDICHERRY">District_Name_PONDICHERRY</option>
+              <option value="District_Name_POONCH" name="District_Name_POONCH">District_Name_POONCH</option>
+              <option value="District_Name_PORBANDAR" name="District_Name_PORBANDAR">District_Name_PORBANDAR</option>
+              <option value="District_Name_PRAKASAM" name="District_Name_PRAKASAM">District_Name_PRAKASAM</option>
+              <option value="District_Name_PRATAPGARH" name="District_Name_PRATAPGARH">District_Name_PRATAPGARH</option>
+              <option value="District_Name_PUDUKKOTTAI" name="District_Name_PUDUKKOTTAI">District_Name_PUDUKKOTTAI</option>
+              <option value="District_Name_PULWAMA" name="District_Name_PULWAMA">District_Name_PULWAMA</option>
+              <option value="District_Name_PUNE" name="District_Name_PUNE">District_Name_PUNE</option>
+              <option value="District_Name_PURBI CHAMPARAN" name="District_Name_PURBI CHAMPARAN">District_Name_PURBI CHAMPARAN</option>
+              <option value="District_Name_PURI" name="District_Name_PURI">District_Name_PURI</option>
+              <option value="District_Name_PURNIA" name="District_Name_PURNIA">District_Name_PURNIA</option>
+              <option value="District_Name_PURULIA" name="District_Name_PURULIA">District_Name_PURULIA</option>
+              <option value="District_Name_RAE BARELI" name="District_Name_RAE BARELI">District_Name_RAE BARELI</option>
+              <option value="District_Name_RAICHUR" name="District_Name_RAICHUR">District_Name_RAICHUR</option>
+              <option value="District_Name_RAIGAD" name="District_Name_RAIGAD">District_Name_RAIGAD</option>
+              <option value="District_Name_RAIGARH" name="District_Name_RAIGARH">District_Name_RAIGARH</option>
+              <option value="District_Name_RAIPUR" name="District_Name_RAIPUR">District_Name_RAIPUR</option>
+              <option value="District_Name_RAISEN" name="District_Name_RAISEN">District_Name_RAISEN</option>
+              <option value="District_Name_RAJAURI" name="District_Name_RAJAURI">District_Name_RAJAURI</option>
+              <option value="District_Name_RAJGARH" name="District_Name_RAJGARH">District_Name_RAJGARH</option>
+              <option value="District_Name_RAJKOT" name="District_Name_RAJKOT">District_Name_RAJKOT</option>
+              <option value="District_Name_RAJNANDGAON" name="District_Name_RAJNANDGAON">District_Name_RAJNANDGAON</option>
+              <option value="District_Name_RAJSAMAND" name="District_Name_RAJSAMAND">District_Name_RAJSAMAND</option>
+              <option value="District_Name_RAMANAGARA" name="District_Name_RAMANAGARA">District_Name_RAMANAGARA</option>
+              <option value="District_Name_RAMANATHAPURAM" name="District_Name_RAMANATHAPURAM">District_Name_RAMANATHAPURAM</option>
+              <option value="District_Name_RAMBAN" name="District_Name_RAMBAN">District_Name_RAMBAN</option>
+              <option value="District_Name_RAMGARH" name="District_Name_RAMGARH">District_Name_RAMGARH</option>
+              <option value="District_Name_RAMPUR" name="District_Name_RAMPUR">District_Name_RAMPUR</option>
+              <option value="District_Name_RANCHI" name="District_Name_RANCHI">District_Name_RANCHI</option>
+              <option value="District_Name_RANGAREDDI" name="District_Name_RANGAREDDI">District_Name_RANGAREDDI</option>
+              <option value="District_Name_RATLAM" name="District_Name_RATLAM">District_Name_RATLAM</option>
+              <option value="District_Name_RATNAGIRI" name="District_Name_RATNAGIRI">District_Name_RATNAGIRI</option>
+              <option value="District_Name_RAYAGADA" name="District_Name_RAYAGADA">District_Name_RAYAGADA</option>
+              <option value="District_Name_REASI" name="District_Name_REASI">District_Name_REASI</option>
+              <option value="District_Name_REWA" name="District_Name_REWA">District_Name_REWA</option>
+              <option value="District_Name_REWARI" name="District_Name_REWARI">District_Name_REWARI</option>
+              <option value="District_Name_RI BHOI" name="District_Name_RI BHOI">District_Name_RI BHOI</option>
+              <option value="District_Name_ROHTAK" name="District_Name_ROHTAK">District_Name_ROHTAK</option>
+              <option value="District_Name_ROHTAS" name="District_Name_ROHTAS">District_Name_ROHTAS</option>
+              <option value="District_Name_RUDRA PRAYAG" name="District_Name_RUDRA PRAYAG">District_Name_RUDRA PRAYAG</option>
+              <option value="District_Name_RUPNAGAR" name="District_Name_RUPNAGAR">District_Name_RUPNAGAR</option>
+              <option value="District_Name_S.A.S NAGAR" name="District_Name_S.A.S NAGAR">District_Name_S.A.S NAGAR</option>
+              <option value="District_Name_SABAR KANTHA" name="District_Name_SABAR KANTHA">District_Name_SABAR KANTHA</option>
+              <option value="District_Name_SAGAR" name="District_Name_SAGAR">District_Name_SAGAR</option>
+              <option value="District_Name_SAHARANPUR" name="District_Name_SAHARANPUR">District_Name_SAHARANPUR</option>
+              <option value="District_Name_SAHARSA" name="District_Name_SAHARSA">District_Name_SAHARSA</option>
+              <option value="District_Name_SAHEBGANJ" name="District_Name_SAHEBGANJ">District_Name_SAHEBGANJ</option>
+              <option value="District_Name_SAIHA" name="District_Name_SAIHA">District_Name_SAIHA</option>
+              <option value="District_Name_SALEM" name="District_Name_SALEM">District_Name_SALEM</option>
+              <option value="District_Name_SAMASTIPUR" name="District_Name_SAMASTIPUR">District_Name_SAMASTIPUR</option>
+              <option value="District_Name_SAMBA" name="District_Name_SAMBA">District_Name_SAMBA</option>
+              <option value="District_Name_SAMBALPUR" name="District_Name_SAMBALPUR">District_Name_SAMBALPUR</option>
+              <option value="District_Name_SAMBHAL" name="District_Name_SAMBHAL">District_Name_SAMBHAL</option>
+              <option value="District_Name_SANGLI" name="District_Name_SANGLI">District_Name_SANGLI</option>
+              <option value="District_Name_SANGRUR" name="District_Name_SANGRUR">District_Name_SANGRUR</option>
+              <option value="District_Name_SANT KABEER NAGAR" name="District_Name_SANT KABEER NAGAR">District_Name_SANT KABEER NAGAR</option>
+              <option value="District_Name_SANT RAVIDAS NAGAR" name="District_Name_SANT RAVIDAS NAGAR">District_Name_SANT RAVIDAS NAGAR</option>
+              <option value="District_Name_SARAIKELA KHARSAWAN" name="District_Name_SARAIKELA KHARSAWAN">District_Name_SARAIKELA KHARSAWAN</option>
+              <option value="District_Name_SARAN" name="District_Name_SARAN">District_Name_SARAN</option>
+              <option value="District_Name_SATARA" name="District_Name_SATARA">District_Name_SATARA</option>
+              <option value="District_Name_SATNA" name="District_Name_SATNA">District_Name_SATNA</option>
+              <option value="District_Name_SAWAI MADHOPUR" name="District_Name_SAWAI MADHOPUR">District_Name_SAWAI MADHOPUR</option>
+              <option value="District_Name_SEHORE" name="District_Name_SEHORE">District_Name_SEHORE</option>
+              <option value="District_Name_SENAPATI" name="District_Name_SENAPATI">District_Name_SENAPATI</option>
+              <option value="District_Name_SEONI" name="District_Name_SEONI">District_Name_SEONI</option>
+              <option value="District_Name_SEPAHIJALA" name="District_Name_SEPAHIJALA">District_Name_SEPAHIJALA</option>
+              <option value="District_Name_SERCHHIP" name="District_Name_SERCHHIP">District_Name_SERCHHIP</option>
+              <option value="District_Name_SHAHDOL" name="District_Name_SHAHDOL">District_Name_SHAHDOL</option>
+              <option value="District_Name_SHAHJAHANPUR" name="District_Name_SHAHJAHANPUR">District_Name_SHAHJAHANPUR</option>
+              <option value="District_Name_SHAJAPUR" name="District_Name_SHAJAPUR">District_Name_SHAJAPUR</option>
+              <option value="District_Name_SHAMLI" name="District_Name_SHAMLI">District_Name_SHAMLI</option>
+              <option value="District_Name_SHEIKHPURA" name="District_Name_SHEIKHPURA">District_Name_SHEIKHPURA</option>
+              <option value="District_Name_SHEOHAR" name="District_Name_SHEOHAR">District_Name_SHEOHAR</option>
+              <option value="District_Name_SHEOPUR" name="District_Name_SHEOPUR">District_Name_SHEOPUR</option>
+              <option value="District_Name_SHIMLA" name="District_Name_SHIMLA">District_Name_SHIMLA</option>
+              <option value="District_Name_SHIMOGA" name="District_Name_SHIMOGA">District_Name_SHIMOGA</option>
+              <option value="District_Name_SHIVPURI" name="District_Name_SHIVPURI">District_Name_SHIVPURI</option>
+              <option value="District_Name_SHOPIAN" name="District_Name_SHOPIAN">District_Name_SHOPIAN</option>
+              <option value="District_Name_SHRAVASTI" name="District_Name_SHRAVASTI">District_Name_SHRAVASTI</option>
+              <option value="District_Name_SIDDHARTH NAGAR" name="District_Name_SIDDHARTH NAGAR">District_Name_SIDDHARTH NAGAR</option>
+              <option value="District_Name_SIDHI" name="District_Name_SIDHI">District_Name_SIDHI</option>
+              <option value="District_Name_SIKAR" name="District_Name_SIKAR">District_Name_SIKAR</option>
+              <option value="District_Name_SIMDEGA" name="District_Name_SIMDEGA">District_Name_SIMDEGA</option>
+              <option value="District_Name_SINDHUDURG" name="District_Name_SINDHUDURG">District_Name_SINDHUDURG</option>
+              <option value="District_Name_SINGRAULI" name="District_Name_SINGRAULI">District_Name_SINGRAULI</option>
+              <option value="District_Name_SIRMAUR" name="District_Name_SIRMAUR">District_Name_SIRMAUR</option>
+              <option value="District_Name_SIROHI" name="District_Name_SIROHI">District_Name_SIROHI</option>
+              <option value="District_Name_SIRSA" name="District_Name_SIRSA">District_Name_SIRSA</option>
+              <option value="District_Name_SITAMARHI" name="District_Name_SITAMARHI">District_Name_SITAMARHI</option>
+              <option value="District_Name_SITAPUR" name="District_Name_SITAPUR">District_Name_SITAPUR</option>
+              <option value="District_Name_SIVAGANGA" name="District_Name_SIVAGANGA">District_Name_SIVAGANGA</option>
+              <option value="District_Name_SIVASAGAR" name="District_Name_SIVASAGAR">District_Name_SIVASAGAR</option>
+              <option value="District_Name_SIWAN" name="District_Name_SIWAN">District_Name_SIWAN</option>
+              <option value="District_Name_SOLAN" name="District_Name_SOLAN">District_Name_SOLAN</option>
+              <option value="District_Name_SOLAPUR" name="District_Name_SOLAPUR">District_Name_SOLAPUR</option>
+              <option value="District_Name_SONBHADRA" name="District_Name_SONBHADRA">District_Name_SONBHADRA</option>
+              <option value="District_Name_SONEPUR" name="District_Name_SONEPUR">District_Name_SONEPUR</option>
+              <option value="District_Name_SONIPAT" name="District_Name_SONIPAT">District_Name_SONIPAT</option>
+              <option value="District_Name_SONITPUR" name="District_Name_SONITPUR">District_Name_SONITPUR</option>
+              <option value="District_Name_SOUTH ANDAMANS" name="District_Name_SOUTH ANDAMANS">District_Name_SOUTH ANDAMANS</option>
+              <option value="District_Name_SOUTH DISTRICT" name="District_Name_SOUTH DISTRICT">District_Name_SOUTH DISTRICT</option>
+              <option value="District_Name_SOUTH GARO HILLS" name="District_Name_SOUTH GARO HILLS">District_Name_SOUTH GARO HILLS</option>
+              <option value="District_Name_SOUTH GOA" name="District_Name_SOUTH GOA">District_Name_SOUTH GOA</option>
+              <option value="District_Name_SOUTH TRIPURA" name="District_Name_SOUTH TRIPURA">District_Name_SOUTH TRIPURA</option>
+              <option value="District_Name_SOUTH WEST GARO HILLS" name="District_Name_SOUTH WEST GARO HILLS">District_Name_SOUTH WEST GARO HILLS</option>
+              <option value="District_Name_SOUTH WEST KHASI HILLS" name="District_Name_SOUTH WEST KHASI HILLS">District_Name_SOUTH WEST KHASI HILLS</option>
+              <option value="District_Name_SPSR NELLORE" name="District_Name_SPSR NELLORE">District_Name_SPSR NELLORE</option>
+              <option value="District_Name_SRIKAKULAM" name="District_Name_SRIKAKULAM">District_Name_SRIKAKULAM</option>
+              <option value="District_Name_SRINAGAR" name="District_Name_SRINAGAR">District_Name_SRINAGAR</option>
+              <option value="District_Name_SUKMA" name="District_Name_SUKMA">District_Name_SUKMA</option>
+              <option value="District_Name_SULTANPUR" name="District_Name_SULTANPUR">District_Name_SULTANPUR</option>
+              <option value="District_Name_SUNDARGARH" name="District_Name_SUNDARGARH">District_Name_SUNDARGARH</option>
+              <option value="District_Name_SUPAUL" name="District_Name_SUPAUL">District_Name_SUPAUL</option>
+              <option value="District_Name_SURAJPUR" name="District_Name_SURAJPUR">District_Name_SURAJPUR</option>
+              <option value="District_Name_SURAT" name="District_Name_SURAT">District_Name_SURAT</option>
+              <option value="District_Name_SURENDRANAGAR" name="District_Name_SURENDRANAGAR">District_Name_SURENDRANAGAR</option>
+              <option value="District_Name_SURGUJA" name="District_Name_SURGUJA">District_Name_SURGUJA</option>
+              <option value="District_Name_TAMENGLONG" name="District_Name_TAMENGLONG">District_Name_TAMENGLONG</option>
+              <option value="District_Name_TAPI" name="District_Name_TAPI">District_Name_TAPI</option>
+              <option value="District_Name_TARN TARAN" name="District_Name_TARN TARAN">District_Name_TARN TARAN</option>
+              <option value="District_Name_TAWANG" name="District_Name_TAWANG">District_Name_TAWANG</option>
+              <option value="District_Name_TEHRI GARHWAL" name="District_Name_TEHRI GARHWAL">District_Name_TEHRI GARHWAL</option>
+              <option value="District_Name_THANE" name="District_Name_THANE">District_Name_THANE</option>
+              <option value="District_Name_THANJAVUR" name="District_Name_THANJAVUR">District_Name_THANJAVUR</option>
+              <option value="District_Name_THE NILGIRIS" name="District_Name_THE NILGIRIS">District_Name_THE NILGIRIS</option>
+              <option value="District_Name_THENI" name="District_Name_THENI">District_Name_THENI</option>
+              <option value="District_Name_THIRUVALLUR" name="District_Name_THIRUVALLUR">District_Name_THIRUVALLUR</option>
+              <option value="District_Name_THIRUVANANTHAPURAM" name="District_Name_THIRUVANANTHAPURAM">District_Name_THIRUVANANTHAPURAM</option>
+              <option value="District_Name_THIRUVARUR" name="District_Name_THIRUVARUR">District_Name_THIRUVARUR</option>
+              <option value="District_Name_THOUBAL" name="District_Name_THOUBAL">District_Name_THOUBAL</option>
+              <option value="District_Name_THRISSUR" name="District_Name_THRISSUR">District_Name_THRISSUR</option>
+              <option value="District_Name_TIKAMGARH" name="District_Name_TIKAMGARH">District_Name_TIKAMGARH</option>
+              <option value="District_Name_TINSUKIA" name="District_Name_TINSUKIA">District_Name_TINSUKIA</option>
+              <option value="District_Name_TIRAP" name="District_Name_TIRAP">District_Name_TIRAP</option>
+              <option value="District_Name_TIRUCHIRAPPALLI" name="District_Name_TIRUCHIRAPPALLI">District_Name_TIRUCHIRAPPALLI</option>
+              <option value="District_Name_TIRUNELVELI" name="District_Name_TIRUNELVELI">District_Name_TIRUNELVELI</option>
+              <option value="District_Name_TIRUPPUR" name="District_Name_TIRUPPUR">District_Name_TIRUPPUR</option>
+              <option value="District_Name_TIRUVANNAMALAI" name="District_Name_TIRUVANNAMALAI">District_Name_TIRUVANNAMALAI</option>
+              <option value="District_Name_TONK" name="District_Name_TONK">District_Name_TONK</option>
+              <option value="District_Name_TUENSANG" name="District_Name_TUENSANG">District_Name_TUENSANG</option>
+              <option value="District_Name_TUMKUR" name="District_Name_TUMKUR">District_Name_TUMKUR</option>
+              <option value="District_Name_TUTICORIN" name="District_Name_TUTICORIN">District_Name_TUTICORIN</option>
+              <option value="District_Name_UDAIPUR" name="District_Name_UDAIPUR">District_Name_UDAIPUR</option>
+              <option value="District_Name_UDALGURI" name="District_Name_UDALGURI">District_Name_UDALGURI</option>
+              <option value="District_Name_UDAM SINGH NAGAR" name="District_Name_UDAM SINGH NAGAR">District_Name_UDAM SINGH NAGAR</option>
+              <option value="District_Name_UDHAMPUR" name="District_Name_UDHAMPUR">District_Name_UDHAMPUR</option>
+              <option value="District_Name_UDUPI" name="District_Name_UDUPI">District_Name_UDUPI</option>
+              <option value="District_Name_UJJAIN" name="District_Name_UJJAIN">District_Name_UJJAIN</option>
+              <option value="District_Name_UKHRUL" name="District_Name_UKHRUL">District_Name_UKHRUL</option>
+              <option value="District_Name_UMARIA" name="District_Name_UMARIA">District_Name_UMARIA</option>
+              <option value="District_Name_UNA" name="District_Name_UNA">District_Name_UNA</option>
+              <option value="District_Name_UNAKOTI" name="District_Name_UNAKOTI">District_Name_UNAKOTI</option>
+              <option value="District_Name_UNNAO" name="District_Name_UNNAO">District_Name_UNNAO</option>
+              <option value="District_Name_UPPER SIANG" name="District_Name_UPPER SIANG">District_Name_UPPER SIANG</option>
+              <option value="District_Name_UPPER SUBANSIRI" name="District_Name_UPPER SUBANSIRI">District_Name_UPPER SUBANSIRI</option>
+              <option value="District_Name_UTTAR KANNAD" name="District_Name_UTTAR KANNAD">District_Name_UTTAR KANNAD</option>
+              <option value="District_Name_UTTAR KASHI" name="District_Name_UTTAR KASHI">District_Name_UTTAR KASHI</option>
+              <option value="District_Name_VADODARA" name="District_Name_VADODARA">District_Name_VADODARA</option>
+              <option value="District_Name_VAISHALI" name="District_Name_VAISHALI">District_Name_VAISHALI</option>
+              <option value="District_Name_VALSAD" name="District_Name_VALSAD">District_Name_VALSAD</option>
+              <option value="District_Name_VARANASI" name="District_Name_VARANASI">District_Name_VARANASI</option>
+              <option value="District_Name_VELLORE" name="District_Name_VELLORE">District_Name_VELLORE</option>
+              <option value="District_Name_VIDISHA" name="District_Name_VIDISHA">District_Name_VIDISHA</option>
+              <option value="District_Name_VILLUPURAM" name="District_Name_VILLUPURAM">District_Name_VILLUPURAM</option>
+              <option value="District_Name_VIRUDHUNAGAR" name="District_Name_VIRUDHUNAGAR">District_Name_VIRUDHUNAGAR</option>
+              <option value="District_Name_VISAKHAPATANAM" name="District_Name_VISAKHAPATANAM">District_Name_VISAKHAPATANAM</option>
+              <option value="District_Name_VIZIANAGARAM" name="District_Name_VIZIANAGARAM">District_Name_VIZIANAGARAM</option>
+              <option value="District_Name_WARANGAL" name="District_Name_WARANGAL">District_Name_WARANGAL</option>
+              <option value="District_Name_WARDHA" name="District_Name_WARDHA">District_Name_WARDHA</option>
+              <option value="District_Name_WASHIM" name="District_Name_WASHIM">District_Name_WASHIM</option>
+              <option value="District_Name_WAYANAD" name="District_Name_WAYANAD">District_Name_WAYANAD</option>
+              <option value="District_Name_WEST DISTRICT" name="District_Name_WEST DISTRICT">District_Name_WEST DISTRICT</option>
+              <option value="District_Name_WEST GARO HILLS" name="District_Name_WEST GARO HILLS">District_Name_WEST GARO HILLS</option>
+              <option value="District_Name_WEST GODAVARI" name="District_Name_WEST GODAVARI">District_Name_WEST GODAVARI</option>
+              <option value="District_Name_WEST JAINTIA HILLS" name="District_Name_WEST JAINTIA HILLS">District_Name_WEST JAINTIA HILLS</option>
+              <option value="District_Name_WEST KAMENG" name="District_Name_WEST KAMENG">District_Name_WEST KAMENG</option>
+              <option value="District_Name_WEST KHASI HILLS" name="District_Name_WEST KHASI HILLS">District_Name_WEST KHASI HILLS</option>
+              <option value="District_Name_WEST SIANG" name="District_Name_WEST SIANG">District_Name_WEST SIANG</option>
+              <option value="District_Name_WEST SINGHBHUM" name="District_Name_WEST SINGHBHUM">District_Name_WEST SINGHBHUM</option>
+              <option value="District_Name_WEST TRIPURA" name="District_Name_WEST TRIPURA">District_Name_WEST TRIPURA</option>
+              <option value="District_Name_WOKHA" name="District_Name_WOKHA">District_Name_WOKHA</option>
+              <option value="District_Name_YADGIR" name="District_Name_YADGIR">District_Name_YADGIR</option>
+              <option value="District_Name_YAMUNANAGAR" name="District_Name_YAMUNANAGAR">District_Name_YAMUNANAGAR</option>
+              <option value="District_Name_YANAM" name="District_Name_YANAM">District_Name_YANAM</option>
+              <option value="District_Name_YAVATMAL" name="District_Name_YAVATMAL">District_Name_YAVATMAL</option>
+              <option value="District_Name_ZUNHEBOT" name="District_Name_ZUNHEBOT">District_Name_ZUNHEBOT</option>
+            </select>
+           <!-- </input> -->
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="cropYear" class="col-sm-2 col-form-label">Crop Year</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="cropYear" placeholder="2018" name="cropYear"></input>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="season" class="col-sm-2 col-form-label">Season</label>
+          <div class="col-sm-10">
+            <select name="season" id="season">
+              <!-- <option value="Season_Autumn" name="Season_Autumn">Season_Autumn</option>
+              <option value="Season_Kharif" name="Season_Kharif">Season_Kharif</option> -->
+              <option value="Season_Autumn" name="Season_Autumn">Season_Autumn</option> 
+              <option value="Season_Kharif" name="Season_Kharif">Season_Kharif</option>
+              <option value="Season_Rabi" name="Season_Rabi">Season_Rabi</option>
+              <option value="Season_Summer" name="Season_Summer">Season_Summer</option>
+              <option value="Season_Whole Year" name="Season_Whole Year">Season_Whole Year</option>
+              <option value="Season_Winte" name="Season_Winter">Season_Winte</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="area" class="col-sm-2 col-form-label">Area</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="area" placeholder="1562" name="area"></input>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="cropName" class="col-sm-2 col-form-label">Crop Name</label>
+          <div class="col-sm-10">
+            <!-- <input type="text" class="form-control" id="cropName" placeholder="Ragi" name="cropName"></input> -->
+            <select name="cropName" id="cropName">
+                <option  value="Crop_Apple" name="Crop_Apple">Crop_Apple</option>
+                <option  value="Crop_Arcanut (Processed)" name="Crop_Arcanut (Processed)">Crop_Arcanut (Processed)</option>
+                <option  value="Crop_Arecanut" name="Crop_Arecanut">Crop_Arecanut</option>
+                <option  value="Crop_Arhar/Tur" name="Crop_Arhar/Tur">Crop_Arhar/Tur</option>
+                <option  value="Crop_Ash Gourd" name="Crop_Ash Gourd">Crop_Ash Gourd</option>
+                <option  value="Crop_Atcanut (Raw)" name="Crop_Atcanut (Raw)">Crop_Atcanut (Raw)</option>
+                <option  value="Crop_Bajra" name="Crop_Bajra">Crop_Bajra</option>
+                <option  value="Crop_Banana" name="Crop_Banana">Crop_Banana</option>
+                <option  value="Crop_Barley" name="Crop_Barley">Crop_Barley</option>
+                <option  value="Crop_Bean" name="Crop_Bean">Crop_Bean</option>
+                <option  value="Crop_Beans & Mutter(Vegetable)" name="Crop_Beans & Mutter(Vegetable)">Crop_Beans & Mutter(Vegetable)</option>
+                <option  value="Crop_Beet Root" name="Crop_Beet Root">Crop_Beet Root</option>
+                <option  value="Crop_Ber" name="Crop_Ber">Crop_Ber</option>
+                <option  value="Crop_Bhindi" name="Crop_Bhindi">Crop_Bhindi</option>
+                <option  value="Crop_Bitter Gourd" name="Crop_Bitter Gourd">Crop_Bitter Gourd</option>
+                <option  value="Crop_Black pepper" name="Crop_Black pepper">Crop_Black pepper</option>
+                <option  value="Crop_Blackgram" name="Crop_Blackgram">Crop_Blackgram</option>
+                <option  value="Crop_Bottle Gourd" name="Crop_Bottle Gourd">Crop_Bottle Gourd</option>
+                <option  value="Crop_Brinjal" name="Crop_Brinjal">Crop_Brinjal</option>
+                <option  value="Crop_Cabbage" name="Crop_Cabbage">Crop_Cabbage</option>
+                <option  value="Crop_Cardamom" name="Crop_Cardamom">Crop_Cardamom</option>
+                <option  value="Crop_Carrot" name="Crop_Carrot">Crop_Carrot</option>
+                <option  value="Crop_Cashewnut" name="Crop_Cashewnut">Crop_Cashewnut</option>
+                <option  value="Crop_Cashewnut Processed" name="Crop_Cashewnut Processed">Crop_Cashewnut Processed</option>
+                <option  value="Crop_Cashewnut Raw" name="Crop_Cashewnut Raw">Crop_Cashewnut Raw</option>
+                <option  value="Crop_Castor seed" name="Crop_Castor seed">Crop_Castor seed</option>
+                <option  value="Crop_Cauliflower" name="Crop_Cauliflower">Crop_Cauliflower</option>
+                <option  value="Crop_Citrus Fruit" name="Crop_Citrus Fruit">Crop_Citrus Fruit</option>
+                <option  value="Crop_Coconut " name="Crop_Coconut ">Crop_Coconut </option>
+                <option  value="Crop_Coffee" name="Crop_Coffee">Crop_Coffee</option>
+                <option  value="Crop_Colocosia" name="Crop_Colocosia">Crop_Colocosia</option>
+                <option  value="Crop_Cond-spcs other" name="Crop_Cond-spcs other">Crop_Cond-spcs other</option>
+                <option  value="Crop_Coriander" name="Crop_Coriander">Crop_Coriander</option>
+                <option  value="Crop_Cotton(lint)" name="Crop_Cotton(lint)">Crop_Cotton(lint)</option>
+                <option  value="Crop_Cowpea(Lobia)" name="Crop_Cowpea(Lobia)">Crop_Cowpea(Lobia)</option>
+                <option  value="Crop_Cucumber" name="Crop_Cucumber">Crop_Cucumber</option>
+                <option  value="Crop_Drum Stick" name="Crop_Drum Stick">Crop_Drum Stick</option>
+                <option  value="Crop_Dry chillies" name="Crop_Dry chillies">Crop_Dry chillies</option>
+                <option  value="Crop_Dry ginger" name="Crop_Dry ginger">Crop_Dry ginger</option>
+                <option  value="Crop_Garlic" name="Crop_Garlic">Crop_Garlic</option>
+                <option  value="Crop_Ginger" name="Crop_Ginger">Crop_Ginger</option>
+                <option  value="Crop_Gram" name="Crop_Gram">Crop_Gram</option>
+                <option  value="Crop_Grapes" name="Crop_Grapes">Crop_Grapes</option>
+                <option  value="Crop_Groundnut" name="Crop_Groundnut">Crop_Groundnut</option>
+                <option  value="Crop_Guar seed" name="Crop_Guar seed">Crop_Guar seed</option>
+                <option  value="Crop_Horse-gram" name="Crop_Horse-gram">Crop_Horse-gram</option>
+                <option  value="Crop_Jack Fruit" name="Crop_Jack Fruit">Crop_Jack Fruit</option>
+                <option  value="Crop_Jobster" name="Crop_Jobster">Crop_Jobster</option>
+                <option  value="Crop_Jowar" name="Crop_Jowar">Crop_Jowar</option>
+                <option  value="Crop_Jute" name="Crop_Jute">Crop_Jute</option>
+                <option  value="Crop_Jute & mesta" name="Crop_Jute & mesta">Crop_Jute & mesta</option>
+                <option  value="Crop_Kapas" name="Crop_Kapas">Crop_Kapas</option>
+                <option  value="Crop_Khesari" name="Crop_Khesari">Crop_Khesari</option>
+                <option  value="Crop_Korra" name="Crop_Korra">Crop_Korra</option>
+                <option  value="Crop_Lab-Lab" name="Crop_Lab-Lab">Crop_Lab-Lab</option>
+                <option  value="Crop_Lemon" name="Crop_Lemon">Crop_Lemon</option>
+                <option  value="Crop_Lentil" name="Crop_Lentil">Crop_Lentil</option>
+                <option  value="Crop_Linseed" name="Crop_Linseed">Crop_Linseed</option>
+                <option  value="Crop_Litchi" name="Crop_Litchi">Crop_Litchi</option>
+                <option  value="Crop_Maize" name="Crop_Maize">Crop_Maize</option>
+                <option  value="Crop_Mango" name="Crop_Mango">Crop_Mango</option>
+                <option  value="Crop_Masoor" name="Crop_Masoor">Crop_Masoor</option>
+                <option  value="Crop_Mesta" name="Crop_Mesta">Crop_Mesta</option>
+                <option  value="Crop_Moong(Green Gram)" name="Crop_Moong(Green Gram)">Crop_Moong(Green Gram)</option>
+                <option  value="Crop_Moth" name="Crop_Moth">Crop_Moth</option>
+                <option  value="Crop_Niger seed" name="Crop_Niger seed">Crop_Niger seed</option>
+                <option  value="Crop_Oilseeds total" name="Crop_Oilseeds total">Crop_Oilseeds total</option>
+                <option  value="Crop_Onion" name="Crop_Onion">Crop_Onion</option>
+                <option  value="Crop_Orange" name="Crop_Orange">Crop_Orange</option>
+                <option  value="Crop_Other  Rabi pulses" name="Crop_Other  Rabi pulses">Crop_Other  Rabi pulses</option>
+                <option  value="Crop_Other Cereals & Millets" name="Crop_Other Cereals & Millets">Crop_Other Cereals & Millets</option>
+                <option  value="Crop_Other Citrus Fruit" name="Crop_Other Citrus Fruit">Crop_Other Citrus Fruit</option>
+                <option  value="Crop_Other Dry Fruit" name="Crop_Other Dry Fruit">Crop_Other Dry Fruit</option>
+                <option  value="Crop_Other Fresh Fruits" name="Crop_Other Fresh Fruits">Crop_Other Fresh Fruits</option>
+                <option  value="Crop_Other Kharif pulses" name="Crop_Other Kharif pulses">Crop_Other Kharif pulses</option>
+                <option  value="Crop_Other Vegetables" name="Crop_Other Vegetables">Crop_Other Vegetables</option>
+                <option  value="Crop_Paddy" name="Crop_Paddy">Crop_Paddy</option>
+                <option  value="Crop_Papaya" name="Crop_Papaya">Crop_Papaya</option>
+                <option  value="Crop_Peach" name="Crop_Peach">Crop_Peach</option>
+                <option  value="Crop_Pear" name="Crop_Pear">Crop_Pear</option>
+                <option  value="Crop_Peas  (vegetable)" name="Crop_Peas  (vegetable)">Crop_Peas  (vegetable)</option>
+                <option  value="Crop_Peas & beans (Pulses)" name="Crop_Peas & beans (Pulses)">Crop_Peas & beans (Pulses)</option>
+                <option  value="Crop_Perilla" name="Crop_Perilla">Crop_Perilla</option>
+                <option  value="Crop_Pineapple" name="Crop_Pineapple">Crop_Pineapple</option>
+                <option  value="Crop_Plums" name="Crop_Plums">Crop_Plums</option>
+                <option  value="Crop_Pome Fruit" name="Crop_Pome Fruit">Crop_Pome Fruit</option>
+                <option  value="Crop_Pome Granet" name="Crop_Pome Granet">Crop_Pome Granet</option>
+                <option  value="Crop_Potato" name="Crop_Potato">Crop_Potato</option>
+                <option  value="Crop_Pulses total" name="Crop_Pulses total">Crop_Pulses total</option>
+                <option  value="Crop_Pump Kin" name="Crop_Pump Kin">Crop_Pump Kin</option>
+                <option  value="Crop_Ragi" name="Crop_Ragi">Crop_Ragi</option>
+                <option  value="Crop_Rajmash Kholar" name="Crop_Rajmash Kholar">Crop_Rajmash Kholar</option>
+                <option  value="Crop_Rapeseed &Mustard" name="Crop_Rapeseed &Mustard">Crop_Rapeseed &Mustard</option>
+                <option  value="Crop_Redish" name="Crop_Redish">Crop_Redish</option>
+                <option  value="Crop_Ribed Guard" name="Crop_Ribed Guard">Crop_Ribed Guard</option>
+                <option  value="Crop_Rice" name="Crop_Rice">Crop_Rice</option>
+                <option  value="Crop_Ricebean (nagadal)" name="Crop_Ricebean (nagadal)">Crop_Ricebean (nagadal)</option>
+                <option  value="Crop_Rubber" name="Crop_Rubber">Crop_Rubber</option>
+                <option  value="Crop_Safflower" name="Crop_Safflower">Crop_Safflower</option>
+                <option  value="Crop_Samai" name="Crop_Samai">Crop_Samai</option>
+                <option  value="Crop_Sannhamp" name="Crop_Sannhamp">Crop_Sannhamp</option>
+                <option  value="Crop_Sapota" name="Crop_Sapota">Crop_Sapota</option>
+                <option  value="Crop_Sesamum" name="Crop_Sesamum">Crop_Sesamum</option>
+                <option  value="Crop_Small millets" name="Crop_Small millets">Crop_Small millets</option>
+                <option  value="Crop_Snak Guard" name="Crop_Snak Guard">Crop_Snak Guard</option>
+                <option  value="Crop_Soyabean" name="Crop_Soyabean">Crop_Soyabean</option>
+                <option  value="Crop_Sugarcane" name="Crop_Sugarcane">Crop_Sugarcane</option>
+                <option  value="Crop_Sunflower" name="Crop_Sunflower">Crop_Sunflower</option>
+                <option  value="Crop_Sweet potato" name="Crop_Sweet potato">Crop_Sweet potato</option>
+                <option  value="Crop_Tapioca" name="Crop_Tapioca">Crop_Tapioca</option>
+                <option  value="Crop_Tea" name="Crop_Tea">Crop_Tea</option>
+                <option  value="Crop_Tobacco" name="Crop_Tobacco">Crop_Tobacco</option>
+                <option  value="Crop_Tomato" name="Crop_Tomato">Crop_Tomato</option>
+                <option  value="Crop_Total foodgrain" name="Crop_Total foodgrain">Crop_Total foodgrain</option>
+                <option  value="Crop_Turmeric" name="Crop_Turmeric">Crop_Turmeric</option>
+                <option  value="Crop_Turnip" name="Crop_Turnip">Crop_Turnip</option>
+                <option  value="Crop_Urad" name="Crop_Urad">Crop_Urad</option>
+                <option  value="Crop_Varagu" name="Crop_Varagu">Crop_Varagu</option>
+                <option  value="Crop_Water Melon" name="Crop_Water Melon">Crop_Water Melon</option>
+                <option  value="Crop_Wheat" name="Crop_Wheat">Crop_Wheat</option>
+                <option  value="Crop_Yam" name="Crop_Yam">Crop_Yam</option>
+                <option  value="Crop_other fibres" name="Crop_other fibres">Crop_other fibres</option>
+                <option  value="Crop_other misc. pulses" name="Crop_other misc. pulses">Crop_other misc. pulses</option>
+                <option  value="Crop_other oilseeds" name="Crop_other oilseeds">Crop_other oilseeds</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+      <div class="predict">
+            {{prediction_text}}
+      </div>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+</body>
+</html>

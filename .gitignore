@@ -1,0 +1,24 @@
+
+# notebooks
+Crop Classification With Recommendation System.ipynb
+Crop_prediction_model.ipynb
+Crop_recommendation.ipynb
+Crop Recommendation System Project Report.docx
+
+
+# csv documents
+crop_production.csv
+Crop_recommendation.csv
+
+# datasets folder
+/datasets
+
+# checkpoints folder
+/.ipynb_checkpoints/
+
+# pkl files
+model.pkl
+RFmodel.pkl
+
+# python script including app routes
+index(check).py
