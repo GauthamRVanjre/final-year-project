@@ -63,5 +63,9 @@ select {
 
 a {
   text-decoration: none;
+  color: #f7f7f7 !important;
+}
+
+.active {
   color: #fff !important;
 }
