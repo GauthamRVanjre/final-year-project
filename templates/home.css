@@ -1,9 +1,9 @@
 .form-container {
   height: 100vh;
   display: flex;
+  flex-direction: column !important;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
 }
 
 @media screen and (max-width: 768px) {
@@ -12,7 +12,13 @@
   }
 }
 
-.form-container form {
+body {
+  background-image: url("../static/img/crop.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.recommendation-form {
   padding: 50px;
   /* background-color: #fff; */
   border-radius: 10px;
@@ -27,38 +33,40 @@
     rgba(255, 255, 255, 0.3),
     rgba(255, 255, 255, 0.3)
   );
-  width: 100%;
-  min-height: 70px;
+  width: 50%;
+  height: 550px;
   mix-blend-mode: hard-light;
 }
 
-body {
-  background-image: url("../static/img/crop.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
+@media screen and (max-width: 768px) {
+  .recommendation-form {
+    width: 100%;
+    margin-top: 80px;
+    height: 1050px;
+  }
+}
+
+.form-heading {
+  text-align: center;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .predict {
+  margin-top: 10px;
   text-align: center;
   color: green;
-}
-
-select {
-  padding: 7px !important;
 }
 
 .output {
   font-size: 32px;
   font-weight: bold;
   color: green;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  margin-left: 40px;
 }
 
 a {
