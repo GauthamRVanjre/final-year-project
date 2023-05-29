@@ -722,7 +722,7 @@
 
         <div class="row ml-1">
           <div class="form-group row">
-            <label for="cropName" class="col-md-6 col-sm-12 col-form-label">Crop Name</label>
+            <label for="cropName" class="col-md-6 col-sm-12 col-form-label">Current Crop Name</label>
             <div class="col-sm-10">
               <!-- <input type="text" class="form-control" id="cropName" placeholder="Ragi" name="cropName"></input> -->
               <select name="cropName" id="cropName">
@@ -992,20 +992,21 @@
             <button type="submit" class="btn btn-success">Submit</button>
           </div>
         </div>
-        <div class="output-container hidden block">
+        <div class="output-container">
           <div class="predict">
-            The Yield Amount of crop will be:- <span class="output">{{prediction_text}}</span> 
+            The Yield Amount of Current crop will be:- <span class="output">50</span> 
             
             <!-- <div class="output">
               {{prediction_text}}
             </div> -->
+            <!-- {{prediction_text}} -->
         </div>
         <div class="predict">
-            The Yield Amount of Recommended crop will be:- <span class="output">{{prediction_text}}</span>   
+            The Yield Amount of Recommended crop will be:- <span class="output">100</span>   
         </div>
 
         <div class="predict">
-        Profit is up by <span class="output">40%</span>
+        Profit is up by <span class="output">40%</span> <span class="output">%&uarr;</span> 
         </div>
       </div>
       </form>
