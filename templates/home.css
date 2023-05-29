@@ -77,3 +77,10 @@ a {
 .active {
   color: #fff !important;
 }
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}
